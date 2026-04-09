@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Korean Traditional Play Festival</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#" id="brand"></a>
+
+        <div class="header-controls">
+          <nav class="section-nav" aria-label="Primary navigation">
+            <button class="nav-tab is-active" data-section="overview"></button>
+            <button class="nav-tab" data-section="movie"></button>
+            <button class="nav-tab" data-section="school"></button>
+            <button class="nav-tab" data-section="games"></button>
+          </nav>
+
+          <div class="lang-switch" aria-label="Language switcher">
+            <button class="lang-button is-active" data-lang="ko" aria-label="Korean">
+              한글
+            </button>
+            <button class="lang-button" data-lang="en" aria-label="English">EN</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="panel is-active" data-panel="overview">
+          <div class="hero-grid">
+            <div class="hero-copy card">
+              <p class="eyebrow" id="hero-eyebrow"></p>
+              <p class="hero-title-prefix" id="hero-title-prefix"></p>
+              <h1 id="hero-title"></h1>
+              <p class="hero-description" id="hero-description"></p>
+              <p class="festival-location" id="hero-location-message"></p>
+
+              <div class="highlight-row" id="overview-highlights"></div>
+
+              <div class="sponsor-strip">
+                <span class="sponsor-label" id="hero-sponsor-label"></span>
+                <img
+                  id="hero-sponsor-logo"
+                  src="spon.png"
+                  alt=""
+                  class="sponsor-logo"
+                />
+              </div>
+            </div>
+
+            <div class="schedule-card card">
+              <div class="card-heading">
+                <p class="eyebrow" id="schedule-eyebrow"></p>
+                <h2 id="schedule-title"></h2>
+              </div>
+              <div class="timeline" id="timeline"></div>
+            </div>
+          </div>
+        </section>
+
+            <section class="panel" data-panel="movie">
+              <div class="movie-layout">
+                <figure class="movie-poster card">
+              <img
+                src="king.png"
+                alt="왕과사는 남자 포스터"
+                id="movie-poster-image"
+                onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='wang.jpg';}"
+              />
+                <figcaption id="movie-poster-caption"></figcaption>
+                </figure>
+
+            <div class="movie-content card">
+              <p class="eyebrow" id="movie-eyebrow"></p>
+              <h2 id="movie-title"></h2>
+              <p class="section-description" id="movie-description"></p>
+
+              <div class="movie-meta" id="movie-meta"></div>
+
+              <section class="info-block">
+                <h4 id="movie-story-heading"></h4>
+                <p class="extended-copy" id="movie-story-text"></p>
+              </section>
+
+              <section class="info-block">
+                <h4 id="movie-etiquette-heading"></h4>
+                <ul id="movie-etiquette-list"></ul>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="school">
+          <div class="school-layout">
+            <article class="card school-card school-hero">
+              <div class="school-photo-wrap">
+                <div class="school-photo-stack">
+                  <figure class="school-photo">
+                    <img src="korean_school.jpg" alt="" id="school-image" />
+                    <figcaption id="school-photo-caption"></figcaption>
+                  </figure>
+                  <figure class="school-photo">
+                    <img src="korean_school2.jpg" alt="" id="school-image-2" />
+                    <figcaption id="school-photo-caption-2"></figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="school-hero-copy">
+                <p class="eyebrow" id="school-eyebrow"></p>
+                <h2 id="school-title"></h2>
+                <p class="section-description" id="school-description"></p>
+                <div class="school-highlights" id="school-highlights"></div>
+
+                <section class="info-block school-intro-block">
+                  <h4 id="school-intro-heading"></h4>
+                  <div class="school-intro-text" id="school-intro-text"></div>
+                </section>
+              </div>
+            </article>
+
+            <div class="school-details-grid">
+              <section class="info-block">
+                <h4 id="school-classes-heading"></h4>
+                <ul id="school-classes-list"></ul>
+              </section>
+
+              <section class="info-block">
+                <h4 id="school-tuition-heading"></h4>
+                <ul id="school-tuition-list"></ul>
+                <p class="school-detail-note" id="school-hours"></p>
+              </section>
+
+              <section class="info-block">
+                <h4 id="school-contact-heading"></h4>
+                <ul id="school-contact-list" class="school-contact-list"></ul>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="games">
+          <div class="games-layout">
+            <div class="games-intro card">
+              <p class="eyebrow" id="games-eyebrow"></p>
+              <h2 id="games-title"></h2>
+              <p class="section-description" id="games-description"></p>
+
+              <div class="game-tabs" aria-label="Traditional games">
+                <button class="game-tab is-active" data-game="yut"></button>
+                <button class="game-tab" data-game="jegi"></button>
+                <button class="game-tab" data-game="tuho"></button>
+                <button class="game-tab" data-game="voucher" hidden></button>
+              </div>
+            </div>
+
+            <article class="game-card card">
+              <div class="game-header">
+                <div>
+                  <p class="mini-label" id="game-label"></p>
+                  <h3 id="game-title"></h3>
+                </div>
+                <span class="game-badge" id="game-badge"></span>
+              </div>
+
+              <p class="game-summary" id="game-summary"></p>
+
+              <section class="info-block" id="game-info-section">
+                <h4 id="game-info-heading"></h4>
+                <ul id="game-points"></ul>
+              </section>
+
+              <section class="info-block voucher-panel" id="voucher-panel" hidden>
+                <h4 id="voucher-heading"></h4>
+                <p class="voucher-copy" id="voucher-text"></p>
+                <p class="voucher-hint" id="voucher-hint"></p>
+                <div class="voucher-code-box">
+                  <span class="voucher-code-label" id="voucher-code-label"></span>
+                  <strong class="voucher-code-value" id="voucher-code-value"></strong>
+                </div>
+              </section>
+
+              <section class="game-extended" id="yut-detail-section" hidden>
+                <section class="info-block">
+                  <h4 id="yut-rules-heading"></h4>
+                  <p class="extended-copy" id="yut-rules-intro"></p>
+                  <ul id="yut-rules-list"></ul>
+                </section>
+
+                <section class="info-block">
+                  <h4 id="yut-culture-heading"></h4>
+                  <p class="extended-copy" id="yut-culture-text"></p>
+                </section>
+
+                <section class="info-block">
+                  <h4 id="yut-outcomes-heading"></h4>
+                  <p class="extended-copy" id="yut-outcomes-description"></p>
+                  <div class="result-grid" id="yut-outcomes-grid"></div>
+                </section>
+              </section>
+
+              <section class="info-block" id="game-video-section">
+                <h4 id="game-video-heading"></h4>
+                <a
+                  class="video-link"
+                  id="game-video-link"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                ></a>
+              </section>
+
+              <section class="info-block" id="game-lock-block">
+                <h4 id="game-lock-heading"></h4>
+                <div class="unlock-row">
+                  <input
+                    type="text"
+                    inputmode="numeric"
+                    maxlength="4"
+                    id="game-code-input"
+                    class="unlock-input"
+                  />
+                  <button type="button" class="unlock-button" id="game-code-button"></button>
+                </div>
+                <p id="game-lock-status" class="unlock-status" aria-live="polite"></p>
+              </section>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
