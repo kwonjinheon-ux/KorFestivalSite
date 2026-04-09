@@ -10,6 +10,7 @@ const UNLOCK_STORAGE_KEY = "waikato-kfestival-unlocks";
 const state = {
   lang: "ko",
   section: "overview",
+  schoolOrg: "school",
   game: "yut",
   unlockedGames: {
     yut: false,
@@ -86,7 +87,7 @@ const content = {
     nav: {
       overview: "행사소개",
       movie: "영화 소개",
-      school: "한국학교 소개",
+      school: "후원단체 소개",
       games: "전통놀이 체험",
     },
     hero: {
@@ -163,39 +164,122 @@ const content = {
       ],
     },
     school: {
-      eyebrow: "School Information",
-      title: "한국학교 소개",
-      description:
-        "1995년부터 와이카토 지역 학생들과 가족을 위한 한국어, 한국 역사, 문화 교육을 이어오고 있습니다.",
-      imageAlt: "와이카토 한국학교 단체사진",
-      photoCaption: "단체사진 | Waikato Korean School",
-      imageAlt2: "와이카토 한국학교 활동사진",
-      photoCaption2: "단체사진 2 | Waikato Korean School",
-      highlights: ["1995년부터 운영", "수업 9:30 - 1:00", "와이카토 해밀턴"],
-      introHeading: "학교 소개",
-      introParagraphs: [
-        "저희 한국학교에서는 1995년부터 와이카토 지역에 사는 학생들에게 한국어와 한국 역사, 문화를 가르치고 있습니다.",
-        "교민 자녀들에게는 한국인으로서의 정체성과 한국어의 중요성을 고양시키며 타민족 학생에게는 한국어 습득 및 한국 문화 이해의 기회를 제공합니다.",
-      ],
-      classesHeading: "반 편성",
-      classes: [
-        "발해반 - 3-5세",
-        "부여반 - 5-6세 | Year 1",
-        "신라반 - 6-8세 | Year 2",
-        "백제반 - 8-10세 | Year 3/4",
-        "고구려반 - 9-11세 | Year 5/6",
-        "고려반 - 11세 이상 | Year 7-10",
-        "조선 어학당 - 외국인",
-      ],
-      tuitionHeading: "학비 및 수업 안내",
-      tuition: [
-        "발해반, 부여반 - 텀당 NZD $130(재료값 $10)",
-        "조선 어학당 - 텀당 NZD $130",
-        "신라반, 백제반, 고구려반, 고려반 - 텀당 NZD $120",
-      ],
-      hoursText: "수업시간: 오전 9:30 - 오후 1:00",
-      contactHeading: "입학 및 교육상담",
-      contact: ["교장: 김용주", "교감: 권진헌", "이메일 문의: waikatoks@gmail.com"],
+      pageEyebrow: "Supporting Organizations",
+      pageTitle: "후원단체 소개",
+      pageDescription:
+        "이 페이지에서는 한국학교, 와이카토 한인회, TANI를 소개합니다.",
+      orgTabs: {
+        school: "한국학교 소개",
+        association: "와이카토 한인회 소개",
+        tani: "TANI 소개",
+      },
+      organizations: {
+        school: {
+          eyebrow: "Waikato Korean School",
+          title: "한국학교 소개",
+          description:
+            "1995년부터 와이카토 지역 학생들과 가족을 위한 한국어, 한국 역사, 문화 교육을 이어오고 있습니다.",
+          images: [
+            {
+              src: "assets/images/korean_school.jpg",
+              alt: "와이카토 한국학교 단체사진",
+              caption: "단체사진 | Waikato Korean School",
+            },
+            {
+              src: "assets/images/korean_school2.jpg",
+              alt: "와이카토 한국학교 활동사진",
+              caption: "단체사진 2 | Waikato Korean School",
+            },
+          ],
+          highlights: ["1995년부터 운영", "수업 9:30 - 1:00", "와이카토 해밀턴"],
+          introHeading: "학교 소개",
+          introParagraphs: [
+            "저희 한국학교에서는 1995년부터 와이카토 지역에 사는 학생들에게 한국어와 한국 역사, 문화를 가르치고 있습니다.",
+            "교민 자녀들에게는 한국인으로서의 정체성과 한국어의 중요성을 고양시키며 타민족 학생에게는 한국어 습득 및 한국 문화 이해의 기회를 제공합니다.",
+          ],
+          detailOneHeading: "반 편성",
+          detailOneItems: [
+            "발해반 - 3-5세",
+            "부여반 - 5-6세 | Year 1",
+            "신라반 - 6-8세 | Year 2",
+            "백제반 - 8-10세 | Year 3/4",
+            "고구려반 - 9-11세 | Year 5/6",
+            "고려반 - 11세 이상 | Year 7-10",
+            "조선 어학당 - 외국인",
+          ],
+          detailTwoHeading: "학비 및 수업 안내",
+          detailTwoItems: [
+            "발해반, 부여반 - 텀당 NZD $130(재료값 $10)",
+            "조선 어학당 - 텀당 NZD $130",
+            "신라반, 백제반, 고구려반, 고려반 - 텀당 NZD $120",
+          ],
+          detailTwoNote: "수업시간: 오전 9:30 - 오후 1:00",
+          detailThreeHeading: "입학 및 교육상담",
+          detailThreeItems: ["교장: 김용주", "교감: 권진헌", "이메일 문의: waikatoks@gmail.com"],
+        },
+        association: {
+          eyebrow: "Community Organization",
+          title: "와이카토 한인회 소개",
+          description:
+            "와이카토 지역 한인사회의 소통과 교류를 돕는 지역 공동체 단체입니다.",
+          images: [],
+          highlights: ["지역 교류", "행사 협력", "커뮤니티 지원"],
+          introHeading: "단체 소개",
+          introParagraphs: [
+            "와이카토 한인회는 와이카토 지역에 거주하는 한인들이 서로 연결되고 소통할 수 있도록 돕는 지역 공동체 단체입니다.",
+            "문화 행사, 생활 정보 공유, 교민 간 협력을 통해 한인사회와 지역사회가 함께 어울릴 수 있는 기반을 만들어 갑니다.",
+          ],
+          detailOneHeading: "주요 역할",
+          detailOneItems: [
+            "한인사회 네트워크와 소통 지원",
+            "지역 문화행사와 커뮤니티 활동 협력",
+            "교민 정착과 생활 정보 공유",
+          ],
+          detailTwoHeading: "행사 연계",
+          detailTwoItems: [
+            "K-festival 등 지역 행사 협력",
+            "가족 단위 참여 프로그램 지원",
+            "다양한 지역 단체와의 교류 추진",
+          ],
+          detailTwoNote: "상세 소개 자료와 추가 정보는 추후 더 보완할 수 있습니다.",
+          detailThreeHeading: "안내",
+          detailThreeItems: [
+            "행사 현장에서 운영진을 통해 관련 안내를 받을 수 있습니다.",
+            "필요한 단체 소개 내용은 이 페이지에 계속 추가할 수 있습니다.",
+          ],
+        },
+        tani: {
+          eyebrow: "Partner Organization",
+          title: "TANI 소개",
+          description:
+            "지역사회 연결과 다문화 교류를 지원하는 협력 단체입니다.",
+          images: [],
+          highlights: ["다문화 협력", "지역 네트워크", "행사 파트너"],
+          introHeading: "단체 소개",
+          introParagraphs: [
+            "TANI는 지역사회 안에서 사람과 사람을 연결하고, 다양한 문화가 자연스럽게 만나도록 돕는 협력 단체입니다.",
+            "행사와 커뮤니티 활동을 통해 참여자들이 서로를 이해하고 교류할 수 있는 기회를 넓히는 데 함께하고 있습니다.",
+          ],
+          detailOneHeading: "협력 분야",
+          detailOneItems: [
+            "다문화 교류와 지역사회 연결 지원",
+            "커뮤니티 프로그램과 행사 협력",
+            "참여자 중심의 네트워크 형성 지원",
+          ],
+          detailTwoHeading: "행사 연계",
+          detailTwoItems: [
+            "지역 파트너와의 협업 지원",
+            "문화행사 참여와 교류 확대",
+            "커뮤니티 기반 프로그램 연계",
+          ],
+          detailTwoNote: "세부 단체 소개는 필요에 따라 계속 업데이트할 수 있습니다.",
+          detailThreeHeading: "안내",
+          detailThreeItems: [
+            "행사 현장에서 TANI 관련 안내를 받을 수 있습니다.",
+            "추가 자료나 소개 문구는 후원단체 소개 페이지에 이어서 반영할 수 있습니다.",
+          ],
+        },
+      },
     },
     games: {
       eyebrow: "Hands-on Program",
@@ -321,7 +405,6 @@ const content = {
         points: [
           "멀리서 던져 통 안에 넣는 단순한 방식이라 누구나 쉽게 도전할 수 있습니다.",
           "차례를 지키며 진행해 어린이와 어른이 함께 즐기기 좋습니다.",
-          "공간을 크게 차지하지 않아 행사 부스 운영에도 잘 맞습니다.",
         ],
         videoText:
           "투호놀이 진행 방식을 빠르게 볼 수 있도록 관련 영상 검색 결과를 열어 둡니다.",
@@ -335,7 +418,7 @@ const content = {
     nav: {
       overview: "Festival Overview",
       movie: "Film",
-      school: "Korean School",
+      school: "Supporting Organizations",
       games: "Traditional Games",
     },
     hero: {
@@ -412,39 +495,122 @@ const content = {
       ],
     },
     school: {
-      eyebrow: "Waikato Korean School",
-      title: "About the Korean School",
-      description:
-        "Since 1995, the school has continued to offer Korean language, Korean history, and cultural education for students and families in the Waikato region.",
-      imageAlt: "Group photo of Waikato Korean School",
-      photoCaption: "Group Photo | Waikato Korean School",
-      imageAlt2: "Activity photo of Waikato Korean School",
-      photoCaption2: "Group Photo 2 | Waikato Korean School",
-      highlights: ["Since 1995", "Class Hours 9:30 AM - 1:00 PM", "Hamilton, Waikato"],
-      introHeading: "About the School",
-      introParagraphs: [
-        "Since 1995, our Korean school has taught Korean language, Korean history, and Korean culture to students living in the Waikato region.",
-        "For children from Korean families, we help strengthen Korean identity and highlight the importance of the Korean language. For students from other backgrounds, we provide opportunities to learn Korean and to better understand Korean culture.",
-      ],
-      classesHeading: "Class Levels",
-      classes: [
-        "Balhae Class - Ages 3-5",
-        "Buyeo Class - Ages 5-6 | Year 1",
-        "Silla Class - Ages 6-8 | Year 2",
-        "Baekje Class - Ages 8-10 | Year 3/4",
-        "Goguryeo Class - Ages 9-11 | Year 5/6",
-        "Goryeo Class - Ages 11 and above | Year 7-10",
-        "Joseon Language Program - Foreign Learners",
-      ],
-      tuitionHeading: "Tuition and Schedule",
-      tuition: [
-        "Balhae and Buyeo Classes - NZD $130 per term (including a NZD $10 materials fee)",
-        "Joseon Language Program - NZD $130 per term",
-        "Silla, Baekje, Goguryeo, and Goryeo Classes - NZD $120 per term",
-      ],
-      hoursText: "Class hours: 9:30 AM - 1:00 PM",
-      contactHeading: "Admissions and Education Consultation",
-      contact: ["Principal: Kim Yongju", "Vice Principal: Kwon Jinheon", "Email: waikatoks@gmail.com"],
+      pageEyebrow: "Supporting Organizations",
+      pageTitle: "Supporting Organizations",
+      pageDescription:
+        "This page introduces Waikato Korean School, the Waikato Korean Association, and TANI.",
+      orgTabs: {
+        school: "Korean School",
+        association: "Waikato Korean Association",
+        tani: "TANI",
+      },
+      organizations: {
+        school: {
+          eyebrow: "Waikato Korean School",
+          title: "About the Korean School",
+          description:
+            "Since 1995, the school has continued to offer Korean language, Korean history, and cultural education for students and families in the Waikato region.",
+          images: [
+            {
+              src: "assets/images/korean_school.jpg",
+              alt: "Group photo of Waikato Korean School",
+              caption: "Group Photo | Waikato Korean School",
+            },
+            {
+              src: "assets/images/korean_school2.jpg",
+              alt: "Activity photo of Waikato Korean School",
+              caption: "Group Photo 2 | Waikato Korean School",
+            },
+          ],
+          highlights: ["Since 1995", "Class Hours 9:30 AM - 1:00 PM", "Hamilton, Waikato"],
+          introHeading: "About the School",
+          introParagraphs: [
+            "Since 1995, our Korean school has taught Korean language, Korean history, and Korean culture to students living in the Waikato region.",
+            "For children from Korean families, we help strengthen Korean identity and highlight the importance of the Korean language. For students from other backgrounds, we provide opportunities to learn Korean and to better understand Korean culture.",
+          ],
+          detailOneHeading: "Class Levels",
+          detailOneItems: [
+            "Balhae Class - Ages 3-5",
+            "Buyeo Class - Ages 5-6 | Year 1",
+            "Silla Class - Ages 6-8 | Year 2",
+            "Baekje Class - Ages 8-10 | Year 3/4",
+            "Goguryeo Class - Ages 9-11 | Year 5/6",
+            "Goryeo Class - Ages 11 and above | Year 7-10",
+            "Joseon Language Program - Foreign Learners",
+          ],
+          detailTwoHeading: "Tuition and Schedule",
+          detailTwoItems: [
+            "Balhae and Buyeo Classes - NZD $130 per term (including a NZD $10 materials fee)",
+            "Joseon Language Program - NZD $130 per term",
+            "Silla, Baekje, Goguryeo, and Goryeo Classes - NZD $120 per term",
+          ],
+          detailTwoNote: "Class hours: 9:30 AM - 1:00 PM",
+          detailThreeHeading: "Admissions and Education Consultation",
+          detailThreeItems: ["Principal: Kim Yongju", "Vice Principal: Kwon Jinheon", "Email: waikatoks@gmail.com"],
+        },
+        association: {
+          eyebrow: "Community Organization",
+          title: "About the Waikato Korean Association",
+          description:
+            "A community organization that supports connection and exchange within the Korean community in the Waikato region.",
+          images: [],
+          highlights: ["Community Exchange", "Festival Support", "Community Care"],
+          introHeading: "About the Organization",
+          introParagraphs: [
+            "The Waikato Korean Association helps Korean residents in the Waikato region stay connected, communicate, and work together as a local community.",
+            "Through cultural events, practical information sharing, and community cooperation, the association helps build stronger ties both within the Korean community and with the wider local community.",
+          ],
+          detailOneHeading: "Key Roles",
+          detailOneItems: [
+            "Supporting communication and networking within the Korean community",
+            "Working with local cultural events and community activities",
+            "Sharing practical information for community life and settlement",
+          ],
+          detailTwoHeading: "Festival Partnership",
+          detailTwoItems: [
+            "Supporting local events such as the K-festival",
+            "Helping family-friendly participation programs",
+            "Building exchanges with other local organizations",
+          ],
+          detailTwoNote: "More detailed organization information can be added here later.",
+          detailThreeHeading: "Information",
+          detailThreeItems: [
+            "Visitors can ask festival staff for related information on site.",
+            "Additional organization details can continue to be added to this page.",
+          ],
+        },
+        tani: {
+          eyebrow: "Partner Organization",
+          title: "About TANI",
+          description:
+            "A partner organization that supports community connection and multicultural exchange.",
+          images: [],
+          highlights: ["Multicultural Links", "Community Network", "Festival Partner"],
+          introHeading: "About the Organization",
+          introParagraphs: [
+            "TANI is a partner organization that helps connect people in the local community and encourages different cultures to meet naturally and respectfully.",
+            "By working alongside events and community programs, TANI helps create more opportunities for people to understand one another and build meaningful connections.",
+          ],
+          detailOneHeading: "Areas of Support",
+          detailOneItems: [
+            "Supporting multicultural exchange and community connection",
+            "Partnering with community programs and public events",
+            "Helping participant-centered network building",
+          ],
+          detailTwoHeading: "Festival Partnership",
+          detailTwoItems: [
+            "Supporting collaboration with local partners",
+            "Expanding cultural exchange through event participation",
+            "Connecting community-based programs and activities",
+          ],
+          detailTwoNote: "Detailed organization information can be updated whenever needed.",
+          detailThreeHeading: "Information",
+          detailThreeItems: [
+            "Visitors can receive TANI-related guidance during the event.",
+            "Additional materials and introduction text can be added to the supporting organizations page later.",
+          ],
+        },
+      },
     },
     games: {
       eyebrow: "Hands-on Program",
@@ -570,7 +736,6 @@ const content = {
         points: [
           "Because the rules are simple, anyone can try it by aiming from a distance and throwing into the container.",
           "Taking turns properly makes it a great traditional activity for children and adults to enjoy together.",
-          "It does not require much space, so it works well in a festival booth setting.",
         ],
         videoText:
           "This button opens related Tuho videos on YouTube so visitors can quickly see how the game is played.",
@@ -579,6 +744,13 @@ const content = {
     },
   },
 };
+
+content.ko.hero.highlights[0].emoji = "🎉";
+content.ko.hero.highlights[1].emoji = "🍜";
+content.ko.hero.highlights[2].emoji = "🎬";
+content.en.hero.highlights[0].emoji = "🎉";
+content.en.hero.highlights[1].emoji = "🍜";
+content.en.hero.highlights[2].emoji = "🎬";
 
 const brand = document.querySelector("#brand");
 const navTabs = [...document.querySelectorAll(".nav-tab")];
@@ -608,6 +780,16 @@ const yutCultureText = document.querySelector("#yut-culture-text");
 const yutOutcomesHeading = document.querySelector("#yut-outcomes-heading");
 const yutOutcomesDescription = document.querySelector("#yut-outcomes-description");
 const yutOutcomesGrid = document.querySelector("#yut-outcomes-grid");
+const schoolPageEyebrow = document.querySelector("#school-page-eyebrow");
+const schoolPageTitle = document.querySelector("#school-page-title");
+const schoolPageDescription = document.querySelector("#school-page-description");
+const schoolOrgTabs = [...document.querySelectorAll(".school-subtab")];
+const schoolHero = document.querySelector(".school-hero");
+const schoolPhotoWrap = document.querySelector(".school-photo-wrap");
+const schoolImage = document.querySelector("#school-image");
+const schoolImage2 = document.querySelector("#school-image-2");
+const schoolPhotoCaption = document.querySelector("#school-photo-caption");
+const schoolPhotoCaption2 = document.querySelector("#school-photo-caption-2");
 
 function areAllGamesUnlocked() {
   return Object.values(state.unlockedGames).every(Boolean);
@@ -810,8 +992,11 @@ function renderOverview(copy) {
     .map(
       (item) => `
         <article class="highlight-card">
-          <strong>${item.title}</strong>
-          <span>${item.text}</span>
+          <div class="highlight-head">
+            <span class="highlight-emoji" aria-hidden="true">${item.emoji || ""}</span>
+            <strong>${item.title}</strong>
+          </div>
+          <p class="highlight-copy">${item.text}</p>
         </article>
       `,
     )
@@ -854,37 +1039,68 @@ function renderMovie(copy) {
 
 function renderSchool(copy) {
   const school = copy.school;
+  const org = school.organizations[state.schoolOrg] || school.organizations.school;
+  const images = org.images || [];
+  const firstImage = images[0];
+  const secondImage = images[1];
 
-  document.querySelector("#school-eyebrow").textContent = school.eyebrow;
-  document.querySelector("#school-title").textContent = school.title;
-  document.querySelector("#school-description").textContent = school.description;
-  document.querySelector("#school-image").alt = school.imageAlt;
-  document.querySelector("#school-photo-caption").textContent = school.photoCaption;
-  document.querySelector("#school-image-2").alt = school.imageAlt2;
-  document.querySelector("#school-photo-caption-2").textContent = school.photoCaption2;
-  document.querySelector("#school-intro-heading").textContent = school.introHeading;
-  document.querySelector("#school-classes-heading").textContent = school.classesHeading;
-  document.querySelector("#school-tuition-heading").textContent = school.tuitionHeading;
-  document.querySelector("#school-hours").textContent = school.hoursText;
-  document.querySelector("#school-contact-heading").textContent = school.contactHeading;
+  schoolPageEyebrow.textContent = school.pageEyebrow;
+  schoolPageTitle.textContent = school.pageTitle;
+  schoolPageDescription.textContent = school.pageDescription;
 
-  document.querySelector("#school-highlights").innerHTML = school.highlights
+  schoolOrgTabs.forEach((tab) => {
+    const orgKey = tab.dataset.schoolOrg;
+    tab.textContent = school.orgTabs[orgKey];
+    tab.classList.toggle("is-active", orgKey === state.schoolOrg);
+  });
+
+  document.querySelector("#school-eyebrow").textContent = org.eyebrow;
+  document.querySelector("#school-title").textContent = org.title;
+  document.querySelector("#school-description").textContent = org.description;
+  document.querySelector("#school-intro-heading").textContent = org.introHeading;
+  document.querySelector("#school-classes-heading").textContent = org.detailOneHeading;
+  document.querySelector("#school-tuition-heading").textContent = org.detailTwoHeading;
+  document.querySelector("#school-hours").textContent = org.detailTwoNote || "";
+  document.querySelector("#school-contact-heading").textContent = org.detailThreeHeading;
+
+  schoolPhotoWrap.hidden = images.length === 0;
+  schoolHero.classList.toggle("is-text-only", images.length === 0);
+
+  if (firstImage) {
+    schoolImage.parentElement.hidden = false;
+    schoolImage.src = firstImage.src;
+    schoolImage.alt = firstImage.alt;
+    schoolPhotoCaption.textContent = firstImage.caption;
+  } else {
+    schoolImage.parentElement.hidden = true;
+  }
+
+  if (secondImage) {
+    schoolImage2.parentElement.hidden = false;
+    schoolImage2.src = secondImage.src;
+    schoolImage2.alt = secondImage.alt;
+    schoolPhotoCaption2.textContent = secondImage.caption;
+  } else {
+    schoolImage2.parentElement.hidden = true;
+  }
+
+  document.querySelector("#school-highlights").innerHTML = org.highlights
     .map((item) => `<span class="meta-pill school-pill">${item}</span>`)
     .join("");
 
-  document.querySelector("#school-intro-text").innerHTML = school.introParagraphs
+  document.querySelector("#school-intro-text").innerHTML = org.introParagraphs
     .map((item) => `<p>${item}</p>`)
     .join("");
 
-  document.querySelector("#school-classes-list").innerHTML = school.classes
+  document.querySelector("#school-classes-list").innerHTML = org.detailOneItems
     .map((item) => `<li>${item}</li>`)
     .join("");
 
-  document.querySelector("#school-tuition-list").innerHTML = school.tuition
+  document.querySelector("#school-tuition-list").innerHTML = org.detailTwoItems
     .map((item) => `<li>${item}</li>`)
     .join("");
 
-  document.querySelector("#school-contact-list").innerHTML = school.contact
+  document.querySelector("#school-contact-list").innerHTML = org.detailThreeItems
     .map((item) => `<li>${item}</li>`)
     .join("");
 }
@@ -989,9 +1205,16 @@ navTabs.forEach((tab) => {
   });
 });
 
-  langButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+langButtons.forEach((button) => {
+  button.addEventListener("click", () => {
     state.lang = button.dataset.lang;
+    renderPage();
+  });
+});
+
+schoolOrgTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    state.schoolOrg = tab.dataset.schoolOrg;
     renderPage();
   });
 });

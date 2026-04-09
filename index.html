@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Korean Traditional Play Festival</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script defer src="assets/js/script.js"></script>
   </head>
   <body>
     <div class="page-shell">
@@ -45,7 +45,7 @@
                 <span class="sponsor-label" id="hero-sponsor-label"></span>
                 <img
                   id="hero-sponsor-logo"
-                  src="spon.png"
+                  src="assets/images/spon.png"
                   alt=""
                   class="sponsor-logo"
                 />
@@ -66,10 +66,10 @@
               <div class="movie-layout">
                 <figure class="movie-poster card">
               <img
-                src="king.png"
+                src="assets/images/king.png"
                 alt="왕과사는 남자 포스터"
                 id="movie-poster-image"
-                onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='wang.jpg';}"
+                onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='assets/images/wang.jpg';}"
               />
                 <figcaption id="movie-poster-caption"></figcaption>
                 </figure>
@@ -96,15 +96,27 @@
 
         <section class="panel" data-panel="school">
           <div class="school-layout">
+            <section class="card school-panel-intro">
+              <p class="eyebrow" id="school-page-eyebrow"></p>
+              <h2 id="school-page-title"></h2>
+              <p class="section-description" id="school-page-description"></p>
+
+              <div class="school-subtabs" aria-label="Supporting organizations">
+                <button class="school-subtab is-active" data-school-org="school"></button>
+                <button class="school-subtab" data-school-org="association"></button>
+                <button class="school-subtab" data-school-org="tani"></button>
+              </div>
+            </section>
+
             <article class="card school-card school-hero">
               <div class="school-photo-wrap">
                 <div class="school-photo-stack">
                   <figure class="school-photo">
-                    <img src="korean_school.jpg" alt="" id="school-image" />
+                    <img src="assets/images/korean_school.jpg" alt="" id="school-image" />
                     <figcaption id="school-photo-caption"></figcaption>
                   </figure>
                   <figure class="school-photo">
-                    <img src="korean_school2.jpg" alt="" id="school-image-2" />
+                    <img src="assets/images/korean_school2.jpg" alt="" id="school-image-2" />
                     <figcaption id="school-photo-caption-2"></figcaption>
                   </figure>
                 </div>
