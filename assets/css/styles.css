@@ -623,6 +623,27 @@ h4 {
   padding-left: 0;
 }
 
+.school-inline-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(45, 94, 134, 0.1);
+  border: 1px solid rgba(45, 94, 134, 0.16);
+  color: var(--accent-blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.school-inline-link:hover {
+  background: linear-gradient(135deg, rgba(45, 94, 134, 0.92), rgba(160, 59, 43, 0.88));
+  border-color: transparent;
+  color: #fff9f2;
+}
+
 .games-layout {
   align-items: start;
 }
@@ -661,6 +682,30 @@ h4 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+}
+
+.game-image-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(45, 94, 134, 0.14);
+  background:
+    linear-gradient(145deg, rgba(45, 94, 134, 0.08), rgba(160, 59, 43, 0.08)),
+    rgba(255, 250, 242, 0.96);
+  box-shadow: 0 14px 28px rgba(87, 58, 32, 0.1);
+}
+
+.game-image-card[hidden] {
+  display: none;
+}
+
+.game-image-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 240px;
+  max-height: 420px;
+  object-fit: cover;
 }
 
 .info-block {

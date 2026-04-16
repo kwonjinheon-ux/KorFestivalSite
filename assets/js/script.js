@@ -241,7 +241,7 @@ const content = {
           ],
           detailTwoNote: "수업시간: 오전 9:30 - 오후 1:00",
           detailThreeHeading: "입학 및 교육상담",
-          detailThreeItems: ["교장: 김용주", "교감: 권진헌", "이메일 문의: waikatoks@gmail.com"],
+          detailThreeItems: ["교장: 김용주", "교감: 권진헌", "이메일 문의: waikatoks@gmail.com", "와이카토 한국학교 페이스북: <a class=\"school-inline-link\" href=\"https://www.facebook.com/waikatokoreanschool/?locale=ko_KR\" target=\"_blank\" rel=\"noreferrer\">바로가기</a>"],
         },
         association: {
           eyebrow: "Community Organization",
@@ -332,6 +332,8 @@ const content = {
         badge: "가족 · 단체 놀이",
         summary:
           "윷놀이는 네 개의 윷가락을 던져 나온 결과에 따라 말을 움직이며 겨루는 한국의 대표 전통놀이입니다. 간단해 보여도 길 선택, 업기, 잡기 같은 전략이 살아 있는 게임입니다.",
+        imageSrc: "assets/images/y.jpg",
+        imageAlt: "윷놀이 소개 이미지",
         points: [
           "윷가락 4개를 던져 나온 결과만큼 말을 움직입니다.",
           "각 팀은 보통 말 4개를 사용하고, 네 말을 먼저 모두 내보내면 이깁니다.",
@@ -416,6 +418,8 @@ const content = {
         badge: "개인 · 도전 놀이",
         summary:
           "제기차기는 발로 제기를 떨어뜨리지 않고 여러 번 차며 균형감각과 리듬을 즐기는 놀이입니다.",
+        imageSrc: "assets/images/j.jpg",
+        imageAlt: "제기차기 소개 이미지",
         points: [
           "한 발 또는 양발을 번갈아 사용하며 제기를 오래 띄우는 것이 핵심입니다.",
           "몸의 균형과 순발력을 자연스럽게 체험할 수 있습니다.",
@@ -432,6 +436,8 @@ const content = {
         badge: "집중 · 예절 놀이",
         summary:
           "투호(投壺)놀이는 삼국시대 중국에서 전래되어 고려 및 조선시대까지 왕실과 양반가에서 즐기던 전통 놀이입니다. 항아리에 화살을 던져 넣는 예법과 집중력을 중시하는 수양 방식이었으며, 주로 명절이나 연회 때 승부를 겨루며 즐겼습니다. 화살 모양 막대를 일정 거리에서 통에 던져 넣는 방식으로, 집중력과 차분함을 기르는 전통 놀이입니다.",
+        imageSrc: "assets/images/t.jpg",
+        imageAlt: "투호놀이 소개 이미지",
         points: [
           "멀리서 던져 통 안에 넣는 단순한 방식이라 누구나 쉽게 도전할 수 있습니다.",
           "차례를 지키며 진행해 어린이와 어른이 함께 즐기기 좋습니다.",
@@ -576,7 +582,7 @@ const content = {
           ],
           detailTwoNote: "Class hours: 9:30 AM - 1:00 PM",
           detailThreeHeading: "Admissions and Education Consultation",
-          detailThreeItems: ["Principal: Kim Yongju", "Vice Principal: Kwon Jinheon", "Email: waikatoks@gmail.com"],
+          detailThreeItems: ["Principal: Kim Yongju", "Vice Principal: Kwon Jinheon", "Email: waikatoks@gmail.com", "Waikato Korean School Facebook: <a class=\"school-inline-link\" href=\"https://www.facebook.com/waikatokoreanschool/?locale=ko_KR\" target=\"_blank\" rel=\"noreferrer\">Visit Page</a>"],
         },
         association: {
           eyebrow: "Community Organization",
@@ -667,6 +673,8 @@ const content = {
         badge: "Family · Group Game",
         summary:
           "Yutnori is one of Korea's best-known traditional games. Players throw four wooden yut sticks and move their tokens according to the result. It may look simple at first, but route choices, stacking, and capturing create a lively game full of strategy.",
+        imageSrc: "assets/images/y.jpg",
+        imageAlt: "Yutnori introduction image",
         points: [
           "Throw four yut sticks and move a token by the result shown.",
           "Each team usually uses four tokens, and the first team to bring all four home wins.",
@@ -751,6 +759,8 @@ const content = {
         badge: "Solo · Challenge Game",
         summary:
           "Jegichagi is a traditional kicking game in which players keep a jegi in the air without letting it fall, enjoying balance, rhythm, and coordination.",
+        imageSrc: "assets/images/j.jpg",
+        imageAlt: "Jegichagi introduction image",
         points: [
           "The key is to keep the jegi in the air for as long as possible using one foot or alternating feet.",
           "It is a fun way to experience body balance, quick reactions, and rhythm.",
@@ -767,6 +777,8 @@ const content = {
         badge: "Focus · Courtesy",
         summary:
           "Tuho (投壺) is a traditional game that was introduced from China during the Three Kingdoms period and enjoyed by royalty and noble families through the Goryeo and Joseon dynasties. Players throw arrow-like sticks into a jar from a set distance, and the game values concentration, calmness, and courtesy.",
+        imageSrc: "assets/images/t.jpg",
+        imageAlt: "Tuho introduction image",
         points: [
           "Because the rules are simple, anyone can try it by aiming from a distance and throwing into the container.",
           "Taking turns properly makes it a great traditional activity for children and adults to enjoy together.",
@@ -792,6 +804,8 @@ const panels = [...document.querySelectorAll(".panel")];
 const langButtons = [...document.querySelectorAll(".lang-button")];
 const gameTabs = [...document.querySelectorAll(".game-tab")];
 const gameInfoSection = document.querySelector("#game-info-section");
+const gameImageCard = document.querySelector("#game-image-card");
+const gameImage = document.querySelector("#game-image");
 const gameCodeInput = document.querySelector("#game-code-input");
 const gameCodeButton = document.querySelector("#game-code-button");
 const gameLockBlock = document.querySelector("#game-lock-block");
@@ -1124,6 +1138,16 @@ function renderGames(copy) {
   document.querySelector("#game-summary").textContent = currentGame.summary;
   document.querySelector("#game-info-heading").textContent = copy.games.infoHeading;
   gameLockStatus.textContent = "";
+
+  if (currentGame.imageSrc) {
+    gameImageCard.hidden = false;
+    gameImage.src = currentGame.imageSrc;
+    gameImage.alt = currentGame.imageAlt || currentGame.title;
+  } else {
+    gameImageCard.hidden = true;
+    gameImage.removeAttribute("src");
+    gameImage.alt = "";
+  }
 
   const gamePoints = document.querySelector("#game-points");
   gamePoints.innerHTML = (currentGame.points || []).map((point) => `<li>${point}</li>`).join("");
