@@ -58,8 +58,8 @@ const voucherGameData = {
   ko: {
     label: "EVENT BONUS",
     title: "경품 교환권",
-    badge: "잠금 해제 완료",
-    summary: "모든 전통놀이 체험을 완료한 참가자에게 제공되는 경품 교환권입니다.",
+    badge: "현장 교환 안내",
+    summary: "행사 현장에서 바로 확인할 수 있는 경품 교환 안내입니다.",
     noticeHeading: "경품 교환 안내",
     noticeText:
       "이 화면은 보는 즉시 사라질 수 있으니, 지금 한국학교 안내 및 경품 교환권 부스로 가서 작은 물품을 교환받으세요. 아니면 아래의 숫자를 외워서 담당자에게 불러주시길 바랍니다.",
@@ -70,14 +70,39 @@ const voucherGameData = {
   en: {
     label: "EVENT BONUS",
     title: "Prize Voucher",
-    badge: "Unlocked",
-    summary: "This voucher is available for participants who completed all traditional game activities.",
+    badge: "Prize Info",
+    summary: "This page provides prize exchange information that can be checked directly at the event.",
     noticeHeading: "Prize Exchange Notice",
     noticeText:
       "This screen may disappear at any time, so please go now to the Korean School Information and Prize Voucher booth to exchange for a small gift. Otherwise, memorize the number below and read it aloud to the staff member.",
     codeLabel: "Number ->",
     codeHint: "This is the random number used for staff verification.",
     points: [],
+  },
+};
+
+const scheduleNoticeContent = {
+  ko: {
+    heading: "행사 주의사항",
+    items: [
+      "행사장 안내와 운영요원의 지시에 최대한 협조해 주시기 바랍니다.",
+      "음식은 지정된 장소에서만 드셔 주시기 바랍니다.",
+      "카페트 위에 음식물이나 음료를 흘리지 않도록 각별히 유의해 주세요.",
+      "카페트에 음식물이나 음료를 흘린 경우에는 즉시 안내요원에게 알려 주세요.",
+      "비가 오는 날에는 바닥이 미끄러울 수 있으니 뛰지 말고 안전하게 걸어 이동해 주세요.",
+      "행사 공간이 협소한 만큼, 보호자께서는 아이들이 안전하게 움직일 수 있도록 가까이에서 살펴봐 주세요.",
+    ],
+  },
+  en: {
+    heading: "Festival Guidelines",
+    items: [
+      "Please follow venue guidance and staff instructions as closely as possible throughout the event.",
+      "Please enjoy food only in the designated eating areas.",
+      "Please take extra care not to spill food or drinks on the carpet.",
+      "If anything is spilled on the carpet, please notify a staff member immediately.",
+      "If it rains, the floor may become slippery, so please walk carefully and do not run.",
+      "As the venue is compact, we kindly ask parents and guardians to supervise children closely.",
+    ],
   },
 };
 
@@ -242,7 +267,7 @@ const content = {
             "가족 단위 참여 프로그램 지원",
             "다양한 지역 단체와의 교류 추진",
           ],
-          detailTwoNote: "상세 소개 자료와 추가 정보는 추후 더 보완할 수 있습니다.",
+          detailTwoNote: "",
           detailThreeHeading: "안내",
           detailThreeItems: [
             "행사 현장에서 운영진을 통해 관련 안내를 받을 수 있습니다.",
@@ -250,34 +275,38 @@ const content = {
           ],
         },
         tani: {
-          eyebrow: "Partner Organization",
+          eyebrow: "Asian Community Network",
           title: "TANI 소개",
           description:
-            "지역사회 연결과 다문화 교류를 지원하는 협력 단체입니다.",
+            "TANI(The Asian Network Inc.)는 뉴질랜드의 아시안 공동체가 더 나은 삶의 질과 웰빙을 누릴 수 있도록 돕는 범아시안 커뮤니티 기반 단체입니다.",
           images: [],
-          highlights: ["다문화 협력", "지역 네트워크", "행사 파트너"],
+          highlights: ["2002년 법인 등록", "범아시안 네트워크", "보건 · 복지 · 연결 지원"],
           introHeading: "단체 소개",
           introParagraphs: [
-            "TANI는 지역사회 안에서 사람과 사람을 연결하고, 다양한 문화가 자연스럽게 만나도록 돕는 협력 단체입니다.",
-            "행사와 커뮤니티 활동을 통해 참여자들이 서로를 이해하고 교류할 수 있는 기회를 넓히는 데 함께하고 있습니다.",
+            "TANI는 2000년 오클랜드 시의 첫 Asian Forum에서 시작된 논의를 바탕으로 성장했으며, 2002년 12월 The Asian Network Incorporated라는 이름의 법인 단체로 등록되었습니다.",
+            "공식 홈페이지에 따르면 TANI는 아시안 이민자와 난민 배경 공동체를 포함한 다양한 민족 공동체와 함께 일하며, 뉴질랜드에서 더 나은 삶의 질과 웰빙을 경험할 수 있도록 돕는 범아시안 커뮤니티 기반 조직입니다.",
           ],
-          detailOneHeading: "협력 분야",
+          detailOneHeading: "주요 역할",
           detailOneItems: [
-            "다문화 교류와 지역사회 연결 지원",
-            "커뮤니티 프로그램과 행사 협력",
-            "참여자 중심의 네트워크 형성 지원",
+            "다양한 아시안 공동체를 연결하고 네트워크를 만드는 일",
+            "아시안 공동체의 복지와 목소리를 옹호하고 정책 참여를 돕는 일",
+            "중앙정부·지방정부·기관·지역 파트너와 협력 기회를 넓히는 일",
+            "공동체의 변화하는 필요를 파악하고 대응하는 일",
+            "기관들이 문화적으로 적절한 서비스를 제공할 수 있도록 조언하는 일",
           ],
-          detailTwoHeading: "행사 연계",
+          detailTwoHeading: "프로그램 및 지원",
           detailTwoItems: [
-            "지역 파트너와의 협업 지원",
-            "문화행사 참여와 교류 확대",
-            "커뮤니티 기반 프로그램 연계",
+            "Health Literacy Programme 등 건강 이해와 정보 접근을 돕는 프로그램 운영",
+            "Healthy Baby Healthy Future, Migrant Women Wellbeing Programme, Stay Well Stay Connected 같은 커뮤니티 개발·역량 강화 프로그램 지원",
+            "주류 서비스 제공기관과 아시안 공동체를 연결하고 건강·사회 지원 정보를 알기 쉽게 제공",
+            "자원봉사 기반 활동과 다국어 정보 전달을 통해 현장 중심의 지원을 넓혀 가는 일",
           ],
-          detailTwoNote: "세부 단체 소개는 필요에 따라 계속 업데이트할 수 있습니다.",
-          detailThreeHeading: "안내",
+          detailTwoNote: "",
+          detailThreeHeading: "연락 및 안내",
           detailThreeItems: [
-            "행사 현장에서 TANI 관련 안내를 받을 수 있습니다.",
-            "추가 자료나 소개 문구는 후원단체 소개 페이지에 이어서 반영할 수 있습니다.",
+            "공식 웹사이트: www.asiannetwork.org.nz",
+            "이메일: info@asiannetwork.org.nz | 전화: +64 9 815 2338",
+            "Head Office: 101 Church Street, Onehunga, Auckland",
           ],
         },
       },
@@ -573,7 +602,7 @@ const content = {
             "Helping family-friendly participation programs",
             "Building exchanges with other local organizations",
           ],
-          detailTwoNote: "More detailed organization information can be added here later.",
+          detailTwoNote: "",
           detailThreeHeading: "Information",
           detailThreeItems: [
             "Visitors can ask festival staff for related information on site.",
@@ -581,34 +610,38 @@ const content = {
           ],
         },
         tani: {
-          eyebrow: "Partner Organization",
+          eyebrow: "Asian Community Network",
           title: "About TANI",
           description:
-            "A partner organization that supports community connection and multicultural exchange.",
+            "TANI (The Asian Network Inc.) is a pan-Asian community-based organisation that works to help Asian communities in Aotearoa New Zealand experience better quality of life and wellbeing.",
           images: [],
-          highlights: ["Multicultural Links", "Community Network", "Festival Partner"],
+          highlights: ["Registered in 2002", "Pan-Asian Network", "Health & Community Support"],
           introHeading: "About the Organization",
           introParagraphs: [
-            "TANI is a partner organization that helps connect people in the local community and encourages different cultures to meet naturally and respectfully.",
-            "By working alongside events and community programs, TANI helps create more opportunities for people to understand one another and build meaningful connections.",
+            "TANI grew out of discussions that began with Auckland City's first Asian Forum in 2000, and in December 2002 the Asian Network Steering Committee was registered as The Asian Network Incorporated (TANI).",
+            "According to its official website, TANI works alongside diverse ethnic communities, including Asian migrants and former refugees, to help them build stronger wellbeing, confidence, and connections in New Zealand.",
           ],
-          detailOneHeading: "Areas of Support",
+          detailOneHeading: "What TANI Does",
           detailOneItems: [
-            "Supporting multicultural exchange and community connection",
-            "Partnering with community programs and public events",
-            "Helping participant-centered network building",
+            "Connects diverse Asian communities and strengthens community networks",
+            "Advocates for the welfare of Asian communities and supports their voice in public life and policy making",
+            "Works with local and central government agencies and other stakeholders",
+            "Responds to changing community needs and identifies new opportunities for collaboration",
+            "Provides cultural advice so organisations can deliver more culturally appropriate services",
           ],
-          detailTwoHeading: "Festival Partnership",
+          detailTwoHeading: "Programmes and Support",
           detailTwoItems: [
-            "Supporting collaboration with local partners",
-            "Expanding cultural exchange through event participation",
-            "Connecting community-based programs and activities",
+            "Supports health literacy and easier access to health and social support information",
+            "Runs community development and capacity-building initiatives such as Healthy Baby Healthy Future, Migrant Women Wellbeing Programme, and Stay Well Stay Connected",
+            "Helps connect mainstream service providers with Asian communities",
+            "Uses volunteer-based and multilingual outreach to share practical messages at the grassroots level",
           ],
-          detailTwoNote: "Detailed organization information can be updated whenever needed.",
-          detailThreeHeading: "Information",
+          detailTwoNote: "",
+          detailThreeHeading: "Contact and Information",
           detailThreeItems: [
-            "Visitors can receive TANI-related guidance during the event.",
-            "Additional materials and introduction text can be added to the supporting organizations page later.",
+            "Website: www.asiannetwork.org.nz",
+            "Email: info@asiannetwork.org.nz | Phone: +64 9 815 2338",
+            "Head Office: 101 Church Street, Onehunga, Auckland",
           ],
         },
       },
@@ -766,13 +799,7 @@ const gameLockHeading = document.querySelector("#game-lock-heading");
 const gameLockStatus = document.querySelector("#game-lock-status");
 const gameVideoSection = document.querySelector("#game-video-section");
 const gameVideoLink = document.querySelector("#game-video-link");
-const voucherPanel = document.querySelector("#voucher-panel");
-const voucherHeading = document.querySelector("#voucher-heading");
-const voucherText = document.querySelector("#voucher-text");
-const voucherHint = document.querySelector("#voucher-hint");
-const voucherCodeLabel = document.querySelector("#voucher-code-label");
-const voucherCodeValue = document.querySelector("#voucher-code-value");
-const voucherHideButton = document.querySelector("#voucher-hide-button");
+
 const yutDetailSection = document.querySelector("#yut-detail-section");
 const yutRulesHeading = document.querySelector("#yut-rules-heading");
 const yutRulesIntro = document.querySelector("#yut-rules-intro");
@@ -797,9 +824,6 @@ function areAllGamesUnlocked() {
   return Object.values(state.unlockedGames).every(Boolean);
 }
 
-function canShowVoucherTab() {
-  return areAllGamesUnlocked() && !state.voucherDismissed;
-}
 
 function loadUnlockState() {
   try {
@@ -809,19 +833,9 @@ function loadUnlockState() {
     }
 
     const saved = JSON.parse(raw);
-    if (saved?.unlockedGames) {
-      state.unlockedGames = {
-        ...state.unlockedGames,
-        ...saved.unlockedGames,
-      };
-    }
 
     if (saved?.voucherCode) {
       state.voucherCode = saved.voucherCode;
-    }
-
-    if (saved?.voucherDismissed === true) {
-      state.voucherDismissed = true;
     }
   } catch (error) {
     // Ignore storage errors and continue with in-memory state.
@@ -853,14 +867,6 @@ function getVoucherCode() {
   return state.voucherCode;
 }
 
-function hideVoucherTab() {
-  state.voucherDismissed = true;
-  if (state.game === "voucher") {
-    state.game = "yut";
-  }
-  saveUnlockState();
-  renderPage();
-}
 
 function renderYutDetails(currentGame) {
   const detail = currentGame.detail;
@@ -906,16 +912,10 @@ function renderYutDetails(currentGame) {
 }
 
 function getGameData(gameKey, copy) {
-  if (gameKey === "voucher") {
-    return voucherGameData[state.lang] || voucherGameData.ko;
-  }
   return copy.gameData[gameKey];
 }
 
 function getGameTabLabel(gameKey, copy) {
-  if (gameKey === "voucher") {
-    return gameTabLabels[state.lang]?.voucher || gameTabLabels.ko.voucher;
-  }
   return copy.gameTabs[gameKey];
 }
 
@@ -924,7 +924,7 @@ function getGameLockText(copy) {
 }
 
 function ensureActiveGameIsAvailable(copy) {
-  if (state.game === "voucher" && !canShowVoucherTab()) {
+  if (state.game === "voucher") {
     state.game = "yut";
   }
 
@@ -934,30 +934,8 @@ function ensureActiveGameIsAvailable(copy) {
   }
 }
 
-function renderGameLock(copy) {
-  const isVoucherGame = state.game === "voucher";
-  const lockText = getGameLockText(copy);
-  gameLockBlock.hidden = isVoucherGame;
-
-  if (isVoucherGame) {
-    return;
-  }
-
-  gameCodeInput.placeholder = lockText.codePlaceholder;
-  gameCodeButton.textContent = lockText.codeButton;
-  gameLockHeading.textContent = lockText.lockHeading;
-
-  if (state.lockMessage) {
-    gameLockStatus.textContent = state.lockMessage;
-    state.lockMessage = "";
-    return;
-  }
-
-  if (state.unlockedGames[state.game]) {
-    gameLockStatus.textContent = lockText.codeAlreadyUnlocked;
-  } else {
-    gameLockStatus.textContent = lockText.codeReady;
-  }
+function renderGameLock() {
+  gameLockBlock.hidden = true;
 }
 
 function tryUnlockCurrentGame() {
@@ -1036,6 +1014,12 @@ function renderOverview(copy) {
         </article>
       `,
     )
+    .join("");
+
+  const scheduleNotice = scheduleNoticeContent[state.lang] || scheduleNoticeContent.ko;
+  document.querySelector("#schedule-notice-heading").textContent = scheduleNotice.heading;
+  document.querySelector("#schedule-notice-list").innerHTML = scheduleNotice.items
+    .map((item) => `<li>${item}</li>`)
     .join("");
 }
 
@@ -1143,18 +1127,7 @@ function renderGames(copy) {
 
   const gamePoints = document.querySelector("#game-points");
   gamePoints.innerHTML = (currentGame.points || []).map((point) => `<li>${point}</li>`).join("");
-  const isVoucherGame = state.game === "voucher";
-
-  gameInfoSection.hidden = isVoucherGame;
-  voucherPanel.hidden = !isVoucherGame;
-
-  if (isVoucherGame) {
-    voucherHeading.textContent = currentGame.noticeHeading;
-    voucherText.textContent = currentGame.noticeText;
-    voucherHint.textContent = currentGame.codeHint;
-    voucherCodeLabel.textContent = currentGame.codeLabel;
-    voucherCodeValue.textContent = getVoucherCode();
-  }
+  gameInfoSection.hidden = false;
 
   renderYutDetails(currentGame);
 
@@ -1191,24 +1164,10 @@ function renderNavigation(copy) {
 
   gameTabs.forEach((tab) => {
     const tabGame = tab.dataset.game;
-    const isVoucher = tabGame === "voucher";
-    const canShowVoucher = canShowVoucherTab();
-
-    if (isVoucher) {
-      tab.hidden = !canShowVoucher;
-      if (!canShowVoucher) {
-        tab.classList.remove("is-active");
-        return;
-      }
-    } else {
-      tab.hidden = false;
-    }
-
+    tab.hidden = false;
     tab.textContent = getGameTabLabel(tabGame, copy);
     tab.classList.toggle("is-active", tabGame === state.game);
   });
-
-  voucherHideButton.hidden = !canShowVoucherTab();
 }
 
 function renderPage() {
@@ -1255,7 +1214,6 @@ gameCodeInput.addEventListener("keydown", (event) => {
 });
 
 gameCodeButton.addEventListener("click", tryUnlockCurrentGame);
-voucherHideButton.addEventListener("click", hideVoucherTab);
 
 gameTabs.forEach((tab) => {
   tab.addEventListener("click", () => {

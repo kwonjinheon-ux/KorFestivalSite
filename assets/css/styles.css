@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f4ede1;
   --bg-deep: #e9dcc4;
   --surface: rgba(255, 252, 247, 0.78);
@@ -380,6 +380,32 @@ h4 {
   font-size: 0.96rem;
 }
 
+.schedule-notice-block {
+  margin-top: 6px;
+  background:
+    linear-gradient(145deg, rgba(160, 59, 43, 0.08), rgba(45, 94, 134, 0.08)),
+    rgba(255, 250, 242, 0.96);
+  border: 1px solid rgba(160, 59, 43, 0.14);
+}
+
+.schedule-notice-block h4 {
+  color: #443726;
+}
+
+.schedule-notice-list {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.schedule-notice-list li::marker {
+  font-weight: 700;
+  color: var(--accent-red);
+}
+
 .single-column {
   display: grid;
   gap: 18px;
@@ -656,81 +682,6 @@ h4 {
   line-height: 1.65;
 }
 
-.voucher-panel {
-  display: grid;
-  gap: 16px;
-  background:
-    linear-gradient(145deg, rgba(45, 94, 134, 0.08), rgba(160, 59, 43, 0.08)),
-    rgba(255, 250, 242, 0.96);
-}
-
-.voucher-panel[hidden] {
-  display: none;
-}
-
-.voucher-hide-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: 0 16px;
-  border: 1px solid rgba(80, 57, 35, 0.18);
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(92, 88, 84, 0.96), rgba(68, 64, 61, 0.94));
-  color: #fff9f2;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  transition:
-    transform 180ms ease,
-    filter 180ms ease,
-    border-color 180ms ease;
-}
-
-.voucher-hide-button:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-  border-color: rgba(80, 57, 35, 0.3);
-}
-
-.voucher-hide-button[hidden] {
-  display: none;
-}
-
-.voucher-copy,
-.voucher-hint {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.75;
-}
-
-.voucher-hint {
-  font-weight: 600;
-  color: #443726;
-}
-
-.voucher-code-box {
-  display: grid;
-  gap: 10px;
-  padding: 18px;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(45, 94, 134, 0.16);
-}
-
-.voucher-code-label {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--accent-red);
-  letter-spacing: 0.08em;
-}
-
-.voucher-code-value {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 6vw, 3rem);
-  line-height: 1;
-  color: var(--ink);
-  word-break: break-all;
-}
 
 .game-extended {
   display: grid;
@@ -840,8 +791,7 @@ h4 {
 }
 
 #game-lock-block {
-  display: grid;
-  gap: 14px;
+  display: none !important;
 }
 
 .unlock-row {
