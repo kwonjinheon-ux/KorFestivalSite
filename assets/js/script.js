@@ -1,7 +1,7 @@
-const GAME_UNLOCK_CODES = {
-  yut: "1234",
-  jegi: "3321",
-  tuho: "6110",
+﻿const GAME_UNLOCK_CODES = {
+  yut: "0301",
+  jegi: "0625",
+  tuho: "0815",
 };
 
 const VOUCHER_CODES = ["236248", "3393412", "43124416", "53155420"];
@@ -19,6 +19,7 @@ const state = {
   },
   lockMessage: "",
   voucherCode: "",
+  voucherDismissed: false,
 };
 
 const gameTabLabels = {
@@ -771,6 +772,7 @@ const voucherText = document.querySelector("#voucher-text");
 const voucherHint = document.querySelector("#voucher-hint");
 const voucherCodeLabel = document.querySelector("#voucher-code-label");
 const voucherCodeValue = document.querySelector("#voucher-code-value");
+const voucherHideButton = document.querySelector("#voucher-hide-button");
 const yutDetailSection = document.querySelector("#yut-detail-section");
 const yutRulesHeading = document.querySelector("#yut-rules-heading");
 const yutRulesIntro = document.querySelector("#yut-rules-intro");
@@ -795,6 +797,10 @@ function areAllGamesUnlocked() {
   return Object.values(state.unlockedGames).every(Boolean);
 }
 
+function canShowVoucherTab() {
+  return areAllGamesUnlocked() && !state.voucherDismissed;
+}
+
 function loadUnlockState() {
   try {
     const raw = window.localStorage.getItem(UNLOCK_STORAGE_KEY);
@@ -813,6 +819,10 @@ function loadUnlockState() {
     if (saved?.voucherCode) {
       state.voucherCode = saved.voucherCode;
     }
+
+    if (saved?.voucherDismissed === true) {
+      state.voucherDismissed = true;
+    }
   } catch (error) {
     // Ignore storage errors and continue with in-memory state.
   }
@@ -825,6 +835,7 @@ function saveUnlockState() {
       JSON.stringify({
         unlockedGames: state.unlockedGames,
         voucherCode: state.voucherCode,
+        voucherDismissed: state.voucherDismissed,
       }),
     );
   } catch (error) {
@@ -840,6 +851,15 @@ function getVoucherCode() {
   }
 
   return state.voucherCode;
+}
+
+function hideVoucherTab() {
+  state.voucherDismissed = true;
+  if (state.game === "voucher") {
+    state.game = "yut";
+  }
+  saveUnlockState();
+  renderPage();
 }
 
 function renderYutDetails(currentGame) {
@@ -904,7 +924,7 @@ function getGameLockText(copy) {
 }
 
 function ensureActiveGameIsAvailable(copy) {
-  if (state.game === "voucher" && !areAllGamesUnlocked()) {
+  if (state.game === "voucher" && !canShowVoucherTab()) {
     state.game = "yut";
   }
 
@@ -966,6 +986,7 @@ function tryUnlockCurrentGame() {
     gameCodeInput.value = "";
     state.lockMessage = isAllUnlocked ? lockText.allUnlocked : lockText.codeSuccess;
     if (isAllUnlocked) {
+      state.voucherDismissed = false;
       state.game = "voucher";
     }
     saveUnlockState();
@@ -1171,7 +1192,7 @@ function renderNavigation(copy) {
   gameTabs.forEach((tab) => {
     const tabGame = tab.dataset.game;
     const isVoucher = tabGame === "voucher";
-    const canShowVoucher = areAllGamesUnlocked();
+    const canShowVoucher = canShowVoucherTab();
 
     if (isVoucher) {
       tab.hidden = !canShowVoucher;
@@ -1186,6 +1207,8 @@ function renderNavigation(copy) {
     tab.textContent = getGameTabLabel(tabGame, copy);
     tab.classList.toggle("is-active", tabGame === state.game);
   });
+
+  voucherHideButton.hidden = !canShowVoucherTab();
 }
 
 function renderPage() {
@@ -1232,6 +1255,7 @@ gameCodeInput.addEventListener("keydown", (event) => {
 });
 
 gameCodeButton.addEventListener("click", tryUnlockCurrentGame);
+voucherHideButton.addEventListener("click", hideVoucherTab);
 
 gameTabs.forEach((tab) => {
   tab.addEventListener("click", () => {

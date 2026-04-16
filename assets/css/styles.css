@@ -668,6 +668,34 @@ h4 {
   display: none;
 }
 
+.voucher-hide-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(80, 57, 35, 0.18);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(92, 88, 84, 0.96), rgba(68, 64, 61, 0.94));
+  color: #fff9f2;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease,
+    border-color 180ms ease;
+}
+
+.voucher-hide-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  border-color: rgba(80, 57, 35, 0.3);
+}
+
+.voucher-hide-button[hidden] {
+  display: none;
+}
+
 .voucher-copy,
 .voucher-hint {
   margin: 0;
