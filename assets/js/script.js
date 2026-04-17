@@ -478,7 +478,7 @@ const content = {
         },
         {
           title: "Film Screening",
-          text: "The film 'The Man Who Lives with the King' will be screened from 1:30 PM to 3:30 PM.",
+          text: "The film 'The king's warden' will be screened from 1:30 PM to 3:30 PM.",
         },
       ],
     },
@@ -499,7 +499,7 @@ const content = {
         {
           time: "1:30 PM - 3:30 PM",
           title: "Film Screening",
-          description: "We will watch 'The Man Who Lives with the King' together.",
+          description: "We will watch 'The king's warden.",
         },
         {
           time: "After 3:30 PM",
@@ -510,16 +510,16 @@ const content = {
     },
     movie: {
       eyebrow: "Film Introduction",
-      title: "Film | The Man Who Lives with the King",
+      title: "Film | The king's warden",
       description:
         "This film tells a real historical story inspired by actual events in Korean history.",
-      posterAlt: "Poster for The Man Who Lives with the King",
+      posterAlt: "Poster for The king's warden",
       posterCaption:
         "Screening poster.",
       meta: ["Korean Film", "Historical Drama", "Directed by Jang Hang-jun", "Screening Time: 1:30 PM - 3:30 PM"],
       storyHeading: "Film Synopsis",
       storyText:
-        "Released in 2026, 'The Man Who Lives with the King' is a historical drama about 17-year-old King Danjong (Park Jihoon), who is exiled to Cheongnyeongpo in Yeongwol, Gangwon Province after losing the throne in the aftermath of the Gyeyu Coup, and Eom Heung-do (Yoo Hae-jin), the village chief who protects him with deep loyalty and friendship. The story follows the village chief, who once hoped to profit by turning a poor village into an exile site, and the tragic young king as they come to understand one another and grow through their shared hardship.",
+        "Released in 2026, 'The king's warden' is a historical drama about 17-year-old King Danjong (Park Jihoon), who is exiled to Cheongnyeongpo in Yeongwol, Gangwon Province after losing the throne in the aftermath of the Gyeyu Coup, and Eom Heung-do (Yoo Hae-jin), the village chief who protects him with deep loyalty and friendship. The story follows the village chief, who once hoped to profit by turning a poor village into an exile site, and the tragic young king as they come to understand one another and grow through their shared hardship.",
       etiquetteHeading: "Basic Movie Etiquette",
       etiquette: [
         "Please show your pre-booked ticket before entering.",
